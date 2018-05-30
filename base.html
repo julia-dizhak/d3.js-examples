@@ -12,7 +12,8 @@
             padding-left: 100px;
         }
 
-        #chartArea {
+        #chartArea,
+        #scatterPlot {
             width: 400px;
             height: 300px;
             background-color: rgba(204, 204, 204, 0.5);
@@ -25,14 +26,34 @@
             margin-right: 2px;
             /* fill: teal; */
         }
+
+        .bubble {
+            display: inline-block;
+            fill: purple;
+            fill-opacity: 0.5;
+            stroke: black;
+            stroke-weight: 1px;
+        }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
 </head>
 
 <body>
-    <div id="chartArea"></div>
+    <h1>Charts</h1>
+
+    <div>
+        <h2>Bar charts</h2>
+        <div id="chartArea"></div>
+    </div>
+    
+    <div>
+        <h2>Scatter plot</h2>
+        <div id="scatterPlot"></div>
+    </div>
+    
 
     <script src="../static/js/d3.js"></script>
-    <script src="../static/js/d3/code.js"></script>
+    <!-- <script src="../static/js/charts/bar.js"></script> -->
+    <script src="../static/js/charts/bubble.js"></script>
 </body>
 </html>

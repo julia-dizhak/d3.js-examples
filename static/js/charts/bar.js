@@ -1,6 +1,6 @@
 // draw the bars
 //const dataset = [5, 10, 15, 25, 30, 20, 35];
-const dataset = _.map(_.range(25), function(index) {
+const dataset = _.map(_.range(20), function(index) {
     return Math.random() * 50;
 });
 
@@ -33,7 +33,7 @@ const colorScale = d3.scaleQuantile()
   //.domain([0, d3.max(dataset)])
   //.domain([0, dataset.length])
   .domain([0, 10, dataset.length - 10, dataset.length])
-  .range(['yellow', 'orange', 'green']);  // smallest will be orange -> biggest is purple
+  .range(['yellow', 'orange', 'purple', 'green']);  // smallest will be orange -> biggest is purple
 
 svg.selectAll('rect')
   .data(dataset)
