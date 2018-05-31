@@ -33,4 +33,4 @@ This is just a haphazard collection of code examples for a d3.js book.
 * $0.__data__
 
 ### Todo
-* can't set up padding between charts
+* labels 

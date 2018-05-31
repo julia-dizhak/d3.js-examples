@@ -5,7 +5,8 @@
       return Math.random() * 50;
   });
 
-  const margin = {top: 0, right: 10, bottom: 10, left: 10}; 
+  const margin = {top: 0, right: 10, bottom: 10, left: 10},
+    barPadding = 1;
 
   const multiplier = 7,
     width = 400 - margin.left - margin.right,
@@ -22,7 +23,7 @@
   const xScale = d3.scaleBand()
     .domain(dataset)
     .range([0, width])
-    .padding([0.1])  
+    .padding([0.1]);
 
   const yScale = d3.scaleLinear()
     .domain([0, d3.max(dataset) * 1.1])
@@ -43,7 +44,7 @@
     .attr('class', 'bar')
     .attr('x', (item, index) => xScale(item))
     .attr('y', item => height - yScale(item))
-    .attr('width', 20)
+    .attr('width', width / dataset.length - barPadding)
     .attr('height', (item) => yScale(item))
     //.attr('fill', colorScale)
   //   .attr('fill', function(item) {

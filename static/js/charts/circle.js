@@ -8,7 +8,7 @@
         .append('svg')
         .attr('width', width)
         .attr('height', height);
-        console.log(svg);
+        //console.log(svg);
 
     const circles = svg.selectAll("circle")
         .data(dataset)
