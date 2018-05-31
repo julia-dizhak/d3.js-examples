@@ -6,8 +6,9 @@
             r: Math.random() * 30  
         }
     });
+    //console.log(dataset);
 
-    const margin = {top: 0, right: 10, bottom: 10, left: 10}; 
+    const margin = {top: 20, right: 20, bottom: 60, left: 60}; 
 
     const multiplier = 7,
         width = 400 - margin.left - margin.right,
@@ -24,11 +25,29 @@
         .domain([0, 100])
         .range([0, width]);
 
+    const xAxis = d3.axisBottom(xScale)
+        .ticks(10)
+        .tickSizeInner(6)
+        .tickSizeOuter(8)
+        .tickPadding(10);
+
+    svg.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0, '+ (height + 30) + ')')
+        .call(xAxis);  
+
     const yScale = d3.scaleLinear()
         .domain([0, d3.max(dataset, function(data) {
             return data.y;
         })])
         .range([height, 0]);
+
+    const yAxis = d3.axisLeft(yScale);
+
+    svg.append('g')
+        .attr('class', 'y axis')
+        .attr('transform', 'translate(0,0)')
+        .call(yAxis);     
 
     //const colorScale = d3.scaleLinear()  
     //const colorScale = d3.scaleQuantize()
@@ -43,29 +62,29 @@
         .enter()
         .append('circle')
         .attr('class', 'bubble')
-        .attr('cx', function(data) {
-            return xScale(data.x)
+        .attr('cx', function(datum) {
+            return xScale(datum.x)
         })
-        .attr('cy', function(data) {
-            return yScale(data.y)
+        .attr('cy', function(datum) {
+            return yScale(datum.y)
         })
-        .attr('r', function(data) {
-            return data.r;
+        .attr('r', function(datum) {
+            return datum.r;
         })
-        .attr('fill', function(item, index) {
+        .attr('fill', function(datum, index) {
             return colorScale(index);
         })
-        .on('mouseover', function(data) {
+        .on('mouseover', function(datum) {
             d3.select(this).classed('active', true);
         })
         .on('mouseout', function(data) {
             d3.select(this).classed('active', false);
         })
-        .on('mousedown', function(data) {
-            d3.select(this).attr('r', data.r * 2)
+        .on('mousedown', function(datum) {
+            d3.select(this).attr('r', datum.r * 2)
         })
-        .on('mouseout', function(data) {
-            d3.select(this).attr('r', data.r)
+        .on('mouseout', function(datum) {
+            d3.select(this).attr('r', datum.r)
         });
 
     document.getElementById("update").onclick =  function update() {

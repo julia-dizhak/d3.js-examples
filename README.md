@@ -33,4 +33,5 @@ This is just a haphazard collection of code examples for a d3.js book.
 * $0.__data__
 
 ### Todo
-* labels 
+* making a scatter plot (arra of arrays)
+* using call() created stepped transition

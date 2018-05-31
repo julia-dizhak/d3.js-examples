@@ -73,6 +73,14 @@
             fill-opacity: 0.5;
             stroke-width: 3px;
         }
+
+        axis path, 
+        .axis line {
+            fill: none;
+			stroke: #000;
+			stroke-width: 1px;
+			shape-rendering: crispEdges;
+		}
     </style>
 </head>
 
@@ -80,10 +88,9 @@
     <h1>Charts</h1>
 
     <div class="flex">
-
-        <div class="item">
+        <!-- <div class="item">
             <div id="food"></div>
-        </div>
+        </div> -->
 
         <div>
             <h2>Bar charts</h2>
@@ -94,18 +101,25 @@
         </div>
         
 
-        <div class="item">
+        <div>
             <h2>Circle</h2>
-            <div id="circle"></div>
-        </div>
-            
-        <div class="item">
-            <h2>Scatter plot</h2>
-            <div>
-                <div id="scatterPlot"></div>
-                <button id="update" type="button">Update chart</button>
+            <div class="item">
+                <div id="circle"></div>
             </div>
         </div>
+        
+        <div>
+            <h2>Scatter plot</h2>
+            <div class="item">
+                <div>
+                    <div id="scatterPlot"></div>
+                    <button id="update" type="button">Update chart</button>
+                </div>
+            </div>
+        </div>
+
+        
+            
     </div>
 
     <script src="../static/js/vendor/lodash.js"></script>
