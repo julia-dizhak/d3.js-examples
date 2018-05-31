@@ -1,7 +1,9 @@
 This is just a haphazard collection of code examples for a d3.js book.
 
 # References
-* https://egghead.io/courses/use-d3-v3-to-build-interactive-charts-with-javascript
+* [Use D3 to build interactive charts](https://egghead.io/courses/use-d3-v3-to-build-interactive-charts-with-javascript)
+* [Interactive Data Visualization for the web (Orelly) by Scott Murray](http://shop.oreilly.com/product/0636920026938.do)
+
 
 ## D3.js
 * creating a histogram indicationg when the Github users commit code.
