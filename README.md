@@ -1,8 +1,11 @@
-This is just a haphazard collection of code examples for a d3.js book.
+This is a just collection of code examples from D3.js books (references below).
+
+demo is https://julia-dizhak.github.io/d3.js-examples/index.html
 
 # References
 * [Use D3 to build interactive charts](https://egghead.io/courses/use-d3-v3-to-build-interactive-charts-with-javascript)
-* [Interactive Data Visualization for the web (Orelly) by Scott Murray](http://shop.oreilly.com/product/0636920026938.do)
+* Book [Interactive Data Visualization for the web (Orelly) by Scott Murray](http://shop.oreilly.com/product/0636920026938.do)
+* Book [Data Visualization with d3.js by Swizec Teller](https://www.packtpub.com/web-development/data-visualization-d3js)
 
 
 ## D3.js

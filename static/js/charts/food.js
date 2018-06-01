@@ -18,7 +18,7 @@
             }
         });
 
-    d3.csv('../static/csv/food.csv', function(error, data) {
+    d3.csv('static/csv/food.csv', function(error, data) {
         if (error) { 
 
         } else { 

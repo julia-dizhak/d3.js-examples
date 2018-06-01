@@ -6,7 +6,7 @@
     let path,
         subjects;
 
-    $.getJSON('../static/json/math.json', function (json) {
+    $.getJSON('static/json/math.json', function (json) {
         subjects = json;
     
         _.keys(subjects).forEach(function(subject) {
