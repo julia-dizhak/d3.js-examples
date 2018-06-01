@@ -22,7 +22,8 @@
         .flex .item {
             margin-bottom: 30px;
             display: flex;
-            justify-content: space-between;
+            //justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
         }
         .flex .item button {
@@ -93,10 +94,19 @@
             stroke: steelblue;
             stroke-width: 1.5px;
         }
-        /* #lineArea path {
+
+        #lineArea {
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        #lineArea path {
             fill: purple;
             fill-opacity: 0.7;
-        } */
+            stroke: plum;
+            stroke-width: 1.5px;
+        }
     </style>
 </head>
 
@@ -135,7 +145,7 @@
         </div>
 
         <div>
-            <h2>Line charts</h2>
+            <h2>Line chart</h2>
             <div class="item">
                 <div>
                     <div id="line"></div>
@@ -143,6 +153,13 @@
                     <button id="science" type="button">Science</button>
                     <button id="reading" type="button">Reading</button>
                 </div>
+            </div>
+        </div>
+
+        <div>
+            <h2>Area chart</h2>
+            <div class="item">
+                <div id="lineArea"></div>
             </div>
         </div>
             
@@ -161,5 +178,6 @@
     <script src="../static/js/charts/bubble.js"></script>
 
     <script src="../static/js/charts/line.js"></script>
+    <script src="../static/js/charts/area.js"></script>
 </body>
 </html>
