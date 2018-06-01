@@ -50,7 +50,7 @@
       })
       .attr("text-anchor", "middle")
       .attr("x", function(datum, index) {
-        return index * (w / dataset.length) + (w / dataset.length - barPadding) / 2;;
+        return index * (w / dataset.length) + 8;
       })
       .attr("y", function(datum) {
         return h - (datum * multiplier) + 22;

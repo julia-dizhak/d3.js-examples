@@ -26,7 +26,7 @@
         .range([0, width]);
 
     const xAxis = d3.axisBottom(xScale)
-        .ticks(10)
+        .ticks(15)
         .tickSizeInner(6)
         .tickSizeOuter(8)
         .tickPadding(10);
@@ -37,8 +37,8 @@
         .call(xAxis);  
 
     const yScale = d3.scaleLinear()
-        .domain([0, d3.max(dataset, function(data) {
-            return data.y;
+        .domain([0, d3.max(dataset, function(datum) {
+            return datum.y;
         })])
         .range([height, 0]);
 
@@ -87,7 +87,7 @@
             d3.select(this).attr('r', datum.r)
         });
 
-    document.getElementById("update").onclick =  function update() {
+    document.getElementById("update").onclick = function update() {
         _.each(dataset, function(data) {
             data.x = Math.round(Math.random() * 100);
             data.y = Math.round(Math.random() * 100);
