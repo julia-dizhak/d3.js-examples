@@ -18,6 +18,7 @@
                 <ol class="topics-links">
                     <li><a href="#barGraph" rel="internal">Simple bar graph</a></li>
                     <li><a href="#barCharts" rel="internal">Bar charts</a></li>
+                    <li><a href="#scatterPlots" rel="internal">Scatterplots</a></li>
                 </ol>
             </nav>
         </div>
@@ -28,7 +29,7 @@
 
         <div class="flex">
             <div>
-                <h3 id="#barGraph">Simple bar graph for biggest cities in Switzerland <span class="remark">(by d3 v4, using svg, data as .csv + d3.fetch)</span></h2>
+                <h3 id="#barGraph">Simple bar graph with population in the biggest cities in Switzerland <span class="remark">(by d3 v4, using svg, data as .csv + d3.fetch)</span></h2>
                 <div class="item">
                     <div id="barGraph"></div>
                 </div>
@@ -38,6 +39,21 @@
                 <div class="item">
                     <div id="barArea"></div>
                     <div id="chartArea"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex" id="scatterPlots">
+            <h2>Scatterplots</h2>
+            <div class="item">
+                <div id="scatterPlot"></div>
+            </div>
+            <div>
+                <div class="item">
+                    <div>
+                        <div id="animatedScatterPlot"></div>
+                        <button id="update" type="button">Update chart</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -58,15 +74,7 @@
             </div>
         </div>
         
-        <div>
-            <h2>Scatter plot</h2>
-            <div class="item">
-                <div>
-                    <div id="scatterPlot"></div>
-                    <button id="update" type="button">Update chart</button>
-                </div>
-            </div>
-        </div>
+        
 
         <div>
             <h2>Line chart</h2>
@@ -101,6 +109,7 @@
 
     <script src="static/js/charts/circle.js"></script>
     <script src="static/js/charts/bubble.js"></script>
+    <script src="static/js/charts/scatterplot.js"></script>
 
     <script src="static/js/charts/line.js"></script>
     <script src="static/js/charts/area.js"></script>

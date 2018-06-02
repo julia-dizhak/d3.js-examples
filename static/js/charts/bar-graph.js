@@ -1,7 +1,7 @@
 (function() {
     const margin = {top: 20, right: 10, bottom: 20, left: 40},
         width = 760 - margin.left - margin.right,
-        height = 400 - margin.top - margin.bottom;
+        height = 350 - margin.top - margin.bottom;
         
     const x = d3.scaleBand()
           .range([0, width])
@@ -17,7 +17,7 @@
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");      
     
-    d3.csv('static/csv/sales.csv').then(function(data) {
+    d3.csv('static/csv/swiss-cities-population.csv').then(function(data) {
         data.forEach(function(d) {
             d.population = +d.population;
         });

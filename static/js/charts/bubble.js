@@ -6,7 +6,6 @@
             r: Math.random() * 30  
         }
     });
-    //console.log(dataset);
 
     const margin = {top: 20, right: 20, bottom: 60, left: 60}; 
 
@@ -14,7 +13,7 @@
         width = 400 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
 
-    const svg = d3.select('#scatterPlot')
+    const svg = d3.select('#animatedScatterPlot')
         .append('svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)

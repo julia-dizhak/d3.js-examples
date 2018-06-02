@@ -1,5 +1,4 @@
 (function() {
-
     const w = 300,
         h = 200;
 

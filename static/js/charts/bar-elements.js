@@ -59,6 +59,5 @@
       .attr("font-size", "11px")
       .attr("fill", "white");
       
-
 })();  
     
