@@ -45,3 +45,5 @@ Books
 ### Todo
 * making a scatter plot (arra of arrays)
 * using call() created stepped transition
+* bar graph cities population in orders (sort)
+* margins convention add link

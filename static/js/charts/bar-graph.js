@@ -1,8 +1,7 @@
 (function() {
-
-    const margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = 400 - margin.left - margin.right,
-        height = 300 - margin.top - margin.bottom;
+    const margin = {top: 20, right: 10, bottom: 20, left: 40},
+        width = 760 - margin.left - margin.right,
+        height = 400 - margin.top - margin.bottom;
         
     const x = d3.scaleBand()
           .range([0, width])
@@ -20,15 +19,15 @@
     
     d3.csv('static/csv/sales.csv').then(function(data) {
         data.forEach(function(d) {
-            d.sales = +d.sales;
+            d.population = +d.population;
         });
 
         x.domain(data.map(function(d) { 
-            return d.salesperson; 
+            return d.city; 
         }));
 
         y.domain([0, d3.max(data, function(d) { 
-            return d.sales; 
+            return d.population; 
         })]);
 
         svg.selectAll('rect')
@@ -37,14 +36,14 @@
             .append("rect")
             .attr("class", "bar")   
             .attr("x", function(d) { 
-                return x(d.salesperson); 
+                return x(d.city); 
             })
             .attr("width", x.bandwidth())
             .attr("y", function(d) { 
-                return y(d.sales); 
+                return y(d.population); 
             })
             .attr("height", function(d) { 
-                return height - y(d.sales); 
+                return height - y(d.population); 
             });
 
             svg.append("g")
