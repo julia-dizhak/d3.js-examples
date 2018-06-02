@@ -1,21 +1,24 @@
 (function() {
     const dataset = [
                         [ 5,     20 ],
-                        [ 480,   90 ],
+                        [ 180,   190 ],
                         [ 250,   50 ],
                         [ 100,   33 ],
-                        [ 330,   95 ],
-                        [ 410,   12 ],
-                        [ 475,   44 ],
+                        [ 30,   195 ],
+                        [ 310,   12 ],
+                        [ 275,   144 ],
                         [ 25,    67 ],
-                        [ 85,    21 ],
-                        [ 220,   88 ],
-                        [ 10,   18 ]
+                        [ 85,    121 ],
+                        [ 115,    10 ],
+                        [ 120,   188 ],
+                        [ 220,   288 ],
+                        [ 15,   260 ]
                     ];
     
-    const margin = {top: 20, right: 10, bottom: 20, left: 10}; 
+    const margin = {top: 20, right: 30, bottom: 20, left: 40},
+        padding = 20;
 
-    const width = 400 - margin.left - margin.right,
+    const width = 500 - margin.left - margin.right,
         height = 300 - margin.top - margin.bottom;
                 
     const svg = d3.select('#scatterPlot')
@@ -26,8 +29,16 @@
         .attr('transform', 'translate(' + margin.left + ', ' + margin.top + ')'); 
     
     const xScale = d3.scaleLinear()
-                    .domain([0, d3.max(dataset, datum => datum[0])])
-                    .range([0, width]);
+        .domain([0, d3.max(dataset, datum => datum[0])])
+        .range([0, width - padding]);
+
+    const yScale = d3.scaleLinear()
+        .domain([0, d3.max(dataset, datum => datum[1])])
+        .range([height - padding, padding]);   
+        
+    const rScale = d3.scaleLinear()
+        .domain([0, d3.max(dataset, datum => datum[1])])
+        .range([2, 5]);      
         
     svg.selectAll('circle')  
         .data(dataset)
@@ -37,9 +48,11 @@
             return xScale(datum[0]);
         }) 
         .attr('cy', function(datum) {
-            return datum[1];
+            return yScale(datum[1]);
         })         
-        .attr('r', 5); 
+        .attr('r',  function(datum) {
+            return rScale(datum[1]);
+        }); 
 
     svg.selectAll('text') 
         .data(dataset)
@@ -49,14 +62,30 @@
             return datum[0] + ',' + datum[1]
         })   
         .attr('x', function(datum) {
-            return datum[0];
+            return xScale(datum[0]);
         }) 
         .attr('y', function(datum) {
-            return datum[1];
+            return yScale(datum[1]);
         })  
         .attr("font-family", "sans-serif")
         .attr("font-size", "11px")
         .attr("fill", "red") 
+
+    const xAxis = d3.axisBottom(xScale)
+        .ticks(8);
+    
+    const yAxis = d3.axisLeft(yScale)
+        .ticks(7);  
+
+    svg.append("g")
+        .attr("transform", "translate(0," + (height - padding) + ")")
+        .attr('class', 'axis')
+        .call(xAxis);
+
+    svg.append("g")
+        .attr("transform", "translate(" + 0 + ", 0)")
+        .attr('class', 'axis')
+        .call(yAxis)    
                     
 })();  
         
