@@ -117,22 +117,41 @@
 </head>
 
 <body>
-    <h1>Charts</h1>
+    <div id="topic" class="topic">
+        <header>Jump top:</header>
+        <ol class="tolic-links">
+            <li><a href="#barGraph" rel="internal">Simple bar graph by d3 v4 (data by csv)</a></li>
+            <li><a href="#barCharts" rel="internal">Bar charts</a></li>
+        </ol>
+    </div>
+
+    <section class="content">
+        <h1>Charts</h1>
+
+        <div class="flex">
+            <div>
+                <h2 id="#barGraph">Simple bar graph</h2>
+                <div class="item">
+                    <div id="barGraph"></div>
+                </div>
+            </div>
+            <div>
+                <h2 id="barCharts">Bar charts</h2>
+                <div class="item">
+                    <div id="barArea"></div>
+                    <div id="chartArea"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 
     <div class="flex">
         <!-- <div class="item">
             <div id="food"></div>
         </div> -->
 
-        <div>
-            <h2>Bar charts</h2>
-            <div class="item">
-                <div id="barChat"></div>
-                <div id="barArea"></div>
-                <div id="chartArea"></div>
-            </div>
-        </div>
-        
+    
 
         <div>
             <h2>Circle</h2>
@@ -176,7 +195,7 @@
     <script src="static/js/vendor/d3.js"></script>
     <script src="static/js/vendor/d3-fetch.v1.min.js"></script>
 
-    <script src="static/js/charts/bar-chat.js"></script> 
+    <script src="static/js/charts/bar-graph.js"></script> 
     <script src="static/js/charts/bar-elements.js"></script>
     <script src="static/js/charts/bar.js"></script> 
 

@@ -3,9 +3,13 @@ This is a just collection of code examples from D3.js books (references below).
 demo is https://julia-dizhak.github.io/d3.js-examples/index.html
 
 # References
+
+Videos
 * [Use D3 to build interactive charts](https://egghead.io/courses/use-d3-v3-to-build-interactive-charts-with-javascript)
-* Book [Interactive Data Visualization for the web (Orelly) by Scott Murray](http://shop.oreilly.com/product/0636920026938.do)
-* Book [Data Visualization with d3.js by Swizec Teller](https://www.packtpub.com/web-development/data-visualization-d3js)
+
+Books
+* [Interactive Data Visualization for the web (Orelly) by Scott Murray](http://shop.oreilly.com/product/0636920026938.do)
+* [Data Visualization with d3.js by Swizec Teller](https://www.packtpub.com/web-development/data-visualization-d3js)
 
 
 ## D3.js
@@ -13,9 +17,11 @@ demo is https://julia-dizhak.github.io/d3.js-examples/index.html
 * .classed()
 * d3.max
 
-### Variety of charts
+### Build charts
 * bar charts
-* scatter plot (bubble chart)
+* scatter plot (or bubble chart)
+* line chart 
+* area chart 
 
 
 ### Scaling types
@@ -34,6 +40,7 @@ demo is https://julia-dizhak.github.io/d3.js-examples/index.html
 ### Debug
 * $0
 * $0.__data__
+
 
 ### Todo
 * making a scatter plot (arra of arrays)

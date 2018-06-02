@@ -11,7 +11,7 @@
     const y = d3.scaleLinear()
           .range([height, 0]);
 
-    const svg = d3.select("#barChat")
+    const svg = d3.select("#barGraph")
         .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -19,8 +19,6 @@
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");      
     
     d3.csv('static/csv/sales.csv').then(function(data) {
-        console.log(data);
-
         data.forEach(function(d) {
             d.sales = +d.sales;
         });
