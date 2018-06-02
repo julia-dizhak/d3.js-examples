@@ -15,8 +15,7 @@
             });
         });
 
-        path = d3
-            .select('#line')
+        path = d3.select('#line')
             .append('svg')
             .attr('width', '100%')
             .attr('height', '100%')

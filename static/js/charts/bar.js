@@ -22,12 +22,13 @@
   // horizontal scale 
   const xScale = d3.scaleBand()
     .domain(dataset)
-    .range([0, width])
-    .padding([0.1]);
+    .range([0, width]);
+    //.padding([0.1]);
+//debugger;
 
   const yScale = d3.scaleLinear()
     .domain([0, d3.max(dataset) * 1.1])
-    .range([0, height]);
+    .range([height, 0]);
 
   //const colorScale = d3.scaleLinear()  
   //const colorScale = d3.scaleQuantize()
