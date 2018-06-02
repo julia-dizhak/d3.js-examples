@@ -1,136 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>D3 - Data Driven Document </title>
+    <title>D3 - Data Driven Documents</title>
 
     <link rel="shortcut icon" href="favicon.png">
     
     <link href="static/css/bootstrap/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            padding: 50px;
-        }
-        h1,
-        h2 {
-            margin: 0 0 15px 0;
-        }
-
-        .flex {
-            display: flex;
-            flex-direction: column;
-        }
-        .flex .item {
-            margin-bottom: 30px;
-            display: flex;
-            /* justify-content: space-between; */
-            justify-content: space-around;
-            align-items: center;
-        }
-        .flex .item button {
-            margin: 10px;
-            border-radius: 4px;
-        }
-
-        #chartArea,
-        #scatterPlot {
-            width: 400px;
-            height: 300px;
-            background-color: rgba(204, 204, 204, 0.5);
-        }
-
-        #barArea {
-            height: 150px;
-            background-color: rgba(204, 204, 204, 0.2);
-        }
-
-        #barChat {
-            width: 400px;
-            height: 300px;
-            background-color: rgba(204, 204, 204, 0.5);
-        }
-
-        #circle {
-          background-color: rgba(204, 204, 204, 0.5);
-        }
-        
-        .bar {
-            display: inline-block;
-            /* width: 20px;
-            height: 75px; */
-            margin-right: 2px;
-            /* fill: teal; */
-        }
-
-        .barElement {
-            display: inline-block;
-            width: 20px;
-            margin-right: 2px;
-            background-color: teal;
-        }
-
-        .bubble {
-            display: inline-block;
-            fill: pink;
-            /* fill: purple; */
-            fill-opacity: 0.7;
-            stroke: black;
-        }
-        .active {
-            fill: magenta;
-            fill-opacity: 0.5;
-            stroke-width: 3px;
-        }
-
-        axis path, 
-        .axis line {
-            fill: none;
-			stroke: #000;
-			stroke-width: 1px;
-			shape-rendering: crispEdges;
-		}
-
-        #line {
-            width: 300px;
-            height: 200px;
-            border: 1px solid black;
-            margin-top: 10px;
-        }
-        #line path {
-            fill: none;
-            stroke: steelblue;
-            stroke-width: 1.5px;
-        }
-
-        #lineArea {
-            width: 300px;
-            height: 200px;
-            border: 1px solid black;
-            margin-top: 10px;
-        }
-        #lineArea path {
-            fill: purple;
-            fill-opacity: 0.7;
-            stroke: plum;
-            stroke-width: 1.5px;
-        }
-    </style>
+    <link href="static/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div id="topic" class="topic">
-        <header>Jump top:</header>
-        <ol class="tolic-links">
-            <li><a href="#barGraph" rel="internal">Simple bar graph by d3 v4 (data by csv)</a></li>
-            <li><a href="#barCharts" rel="internal">Bar charts</a></li>
-        </ol>
-    </div>
+    <h1>Drawing charts</h1>
+    <menu id="topic" class="topics">
+        <div class="wrap">
+            <header class="top-head">Jump top:</header>
+            <nav>
+                <ol class="topics-links">
+                    <li><a href="#barGraph" rel="internal">Simple bar graph</a></li>
+                    <li><a href="#barCharts" rel="internal">Bar charts</a></li>
+                </ol>
+            </nav>
+        </div>
+    </menu>
 
-    <section class="content">
-        <h1>Charts</h1>
+    <main class="content">
+        <h2>Charts</h1>
 
         <div class="flex">
             <div>
-                <h2 id="#barGraph">Simple bar graph</h2>
+                <h3 id="#barGraph">Simple bar graph <span class="remark">(by d3 v4, data as .csv)</span></h2>
                 <div class="item">
                     <div id="barGraph"></div>
                 </div>
