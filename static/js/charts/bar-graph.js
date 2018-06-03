@@ -3,11 +3,11 @@
         width = 760 - margin.left - margin.right,
         height = 350 - margin.top - margin.bottom;
         
-    const x = d3.scaleBand()
+    const xScale = d3.scaleBand()
           .range([0, width])
           .padding(0.1);
     
-    const y = d3.scaleLinear()
+    const yScale = d3.scaleLinear()
           .range([height, 0]);
 
     const svg = d3.select("#barGraph")
@@ -22,11 +22,15 @@
             d.population = +d.population;
         });
 
-        x.domain(data.map(function(d) { 
+        data.sort(function(a, b) {
+            return a.population - b.population;
+        });
+       
+        xScale.domain(data.map(function(d) { 
             return d.city; 
         }));
 
-        y.domain([0, d3.max(data, function(d) { 
+        yScale.domain([0, d3.max(data, function(d) { 
             return d.population; 
         })]);
 
@@ -36,21 +40,21 @@
             .append("rect")
             .attr("class", "bar")   
             .attr("x", function(d) { 
-                return x(d.city); 
+                return xScale(d.city); 
             })
-            .attr("width", x.bandwidth())
+            .attr("width", xScale.bandwidth())
             .attr("y", function(d) { 
-                return y(d.population); 
+                return yScale(d.population); 
             })
             .attr("height", function(d) { 
-                return height - y(d.population); 
+                return height - yScale(d.population); 
             });
 
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")
-                .call(d3.axisBottom(x));
+                .call(d3.axisBottom(xScale));
     
-            svg.append("g").call(d3.axisLeft(y));
+            svg.append("g").call(d3.axisLeft(yScale));
 
     }).catch(function(error) {
         console.log(error);
