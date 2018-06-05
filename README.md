@@ -46,3 +46,5 @@ Books
 * making a scatter plot (arra of arrays)
 * using call() created stepped transition
 * margins convention add link
+* d3 text labels remove from the DOM
+randow without 0
