@@ -26,8 +26,7 @@
         { key: 15, value: 17 },
         { key: 16, value: 16 },
         { key: 17, value: 18 },
-        { key: 18, value: 23 },
-        { key: 19, value: 25 } 
+        { key: 18, value: 23 }
     ];
     const len = dataset.length;
 			
@@ -56,23 +55,30 @@
 		.enter()
         .append('rect')
         .on('click', function(datum) {
-            console.log(datum)
+            console.log(datum);
         })
-        .attr("x", function(d, i) {
-            return xScale(i);
+        .on('mouseout', function(datum) {
+            d3.select(this)
+            .transition()
+            .duration(250)
+            .attr('fill', 'rgb(0, 0, ' + (datum * 10) + ')');
         })
-        .attr("y", function(d) {
-            return h - yScale(d.value);
+        .attr('x', (datum, index) => xScale(index))
+        .attr("y", function(datum) {
+            return h - yScale(datum.value);
         })
         .attr("width", xScale.bandwidth())
-        .attr("height", function(d) {
-            return yScale(d.value);
+        .attr("height", function(datum) {
+            return yScale(datum.value);
         })
-        .attr("fill", function(d) {
-            return "rgb(0, 0, " + (d.value * 10) + ")";
-        });
+        .attr("fill", function(datum) {
+            return "rgb(0, 0, " + (datum.value * 10) + ")";
+        })
+        .append('svg:title')
+        //.append('title')
+        .text(datum => 'this key is ' + datum.key);
 
-    svg.selectAll("text")
+    svg.selectAll('text')
         .data(dataset, key)
         .enter()
         .append("text")
@@ -128,7 +134,7 @@
 
             bars.transition()
                 .duration(500)
-                .attr("x", function(d, index) {
+                .attr("x", function(datum, index) {
                     return xScale(index);
                 })
                 .attr("y", function(d) {
@@ -156,8 +162,8 @@
                 })
                 .attr("text-anchor", "middle")
                 .attr("x", w)
-                .attr("y", function(d) {
-                    return h - yScale(d.value) + 14;
+                .attr('y', function(datum) {
+                    return h - yScale(datum.value) + 14;
                 })						
                 .attr("font-family", "sans-serif")
                 .attr("font-size", "11px")
@@ -172,9 +178,33 @@
             labels.exit()
                 .transition()
                 .duration(500)
-                .attr("x", -xScale.bandwidth())
+                .attr('x', - xScale.bandwidth())
                 .remove();
 
         });
+
+        d3.select("#sortBars").on('click', function() {
+            sortBars();
+        });
+
+        let sortOrder = false;
+        const sortBars = function() {
+            // flip value of sortOrder
+            sortOrder = !sortOrder
+
+            svg.selectAll('rect')
+                .sort(function(a, b) {
+                    if (sortOrder) {
+                        return d3.ascending(a, b);
+                    } else {
+                        return d3.descending(a, b);
+                    }
+                })
+                .transition()
+                .delay((datum, index) => index * 10)
+                .duration(1000)
+                .attr('x', (datum, index) => xScale(datum.value))
+                console.log( svg.selectAll('rect'));
+        }
         
 })();

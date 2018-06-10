@@ -2,6 +2,11 @@ This is a just collection of code examples from D3.js books (references below).
 
 demo is https://julia-dizhak.github.io/d3.js-examples/index.html
 
+Other examples:
+
+*[histogram chart](https://julia-dizhak.github.io/d3.js-examples/ch1/histogram.html)
+
+
 # References
 
 Videos
@@ -51,6 +56,8 @@ Books
 
 
 ### Todo
+* sort bar charts
+* tooltips
 * remove fro bar chart: random 0 value and fix issue with add value button
 * how to show code
 * seo on github: how to improve

@@ -125,9 +125,15 @@ h3 {
     height: 300px;
     background-color: rgba(204, 204, 204, 0.5);
 }
-rect:hover {
-    background: red;
+#barChart rect {
+    transition: 0.1s ease-in-out;
 }
+#barChart rect:hover {
+    fill: orange;
+}
+/* #barChart svg text {
+    pointer-events: none;
+} */
 
 #circle {
   background-color: rgba(204, 204, 204, 0.5);

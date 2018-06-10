@@ -11,7 +11,7 @@
           .range([height, 0]);
 
     const svg = d3.select("#barGraph")
-        .append("svg")
+        .append('svg:svg')
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
@@ -30,8 +30,8 @@
             return d.city; 
         }));
 
-        yScale.domain([0, d3.max(data, function(d) { 
-            return d.population; 
+        yScale.domain([0, d3.max(data, function(datum) { 
+            return datum.population; 
         })]);
 
         svg.selectAll('rect')
@@ -46,9 +46,14 @@
             .attr("y", function(d) { 
                 return yScale(d.population); 
             })
-            .attr("height", function(d) { 
-                return height - yScale(d.population); 
-            });
+            .attr("height", function(datum) { 
+                return height - yScale(datum.population); 
+            })
+            //.append('svg:title')
+            .append("svg:title")
+.text("hai");
+            // .append('title')
+            // .text((datum, index) => 'this key is ' + index);
 
             svg.append("g")
                 .attr("transform", "translate(0," + height + ")")

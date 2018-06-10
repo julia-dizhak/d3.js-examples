@@ -65,9 +65,8 @@
   const canvas = document.getElementById('canvas-simple-shapes');
   const context = canvas.getContext('2d');
   const coords = document.querySelector('.js-dislay-coords');
-  console.log(coords);
 
-  context.fillStyle = 'red'; 
+  context.fillStyle = 'orange'; 
   context.fillRect(0, 0, canvas.width - 150, canvas.height - 150);
 
   const getCoords = (event) => {
