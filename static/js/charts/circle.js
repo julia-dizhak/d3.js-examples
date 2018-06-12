@@ -8,7 +8,6 @@
         .append('svg')
         .attr('width', width)
         .attr('height', height);
-        //console.log(svg);
 
     const circles = svg.selectAll("circle")
         .data(dataset)
@@ -24,8 +23,5 @@
     })
     .attr("fill", "yellow")
     .attr("stroke", "orange")
-    .attr("stroke-width", function(datum) {
-        return datum/2; 
-    });
-    
+    .attr("stroke-width", (datum) => datum/2);
 })();        

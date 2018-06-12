@@ -51,7 +51,7 @@
             })
             //.append('svg:title')
             .append("svg:title")
-.text("hai");
+            .text("hai");
             // .append('title')
             // .text((datum, index) => 'this key is ' + index);
 

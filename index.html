@@ -29,20 +29,20 @@
     <main class="content">
         <h2>Charts</h1>
 
-        <div class="flex" id="health-of-nations">
-            <h2>Chart</h2>
+        <div class="flex">
+            <h3>Gapminder represents Health of nations</h3>
             <div class="item">
-                <div id="scatterPlot"></div>
+                <div id="health-of-nations"></div>
             </div>
+            
             <div>
+                <h3>Purchase</h3>
                 <div class="item">
-                    <div>
-                        <div id="animatedScatterPlot"></div>
-                        <button id="update" type="button">Update chart</button>
-                    </div>
+                    <div id="max-purchase"></div>
                 </div>
             </div>
         </div>
+
         <div class="flex">
             <div>
                 <h3 id="#barGraph">Simple bar graph <span class="remark">(by d3 v4, using svg, data as .csv + d3.fetch)</span></h2>
@@ -70,16 +70,13 @@
         </div>
 
         <div class="flex" id="scatterPlots">
-            <h2>Scatterplots</h2>
+            <h3>Scatterplots</h3>
             <div class="item">
                 <div id="scatterPlot"></div>
-            </div>
-            <div>
-                <div class="item">
-                    <div>
-                        <div id="animatedScatterPlot"></div>
-                        <button id="update" type="button">Update chart</button>
-                    </div>
+
+                <div>
+                    <div id="animatedScatterPlot"></div>
+                    <button id="update" type="button">Update chart</button>
                 </div>
             </div>
         </div>
@@ -134,6 +131,9 @@
     <script src="static/js/vendor/lodash.js"></script>
     <script src="static/js/vendor/d3.js"></script>
     <script src="static/js/vendor/d3-fetch.v1.min.js"></script>
+
+    <script src="static/js/charts/gapminder.js"></script>
+    <script src="static/js/charts/max-purchase.js"></script>
 
     <script src="static/js/charts/bar-graph.js"></script> 
     <script src="static/js/charts/barchart.js"></script>
