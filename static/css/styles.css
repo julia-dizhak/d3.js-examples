@@ -205,3 +205,12 @@ axis path,
     height: 200px;
 } */
 
+#horizontalBarChart rect {
+    fill: steelblue;
+}
+  
+#horizontalBarChart text {
+    fill: white;
+    font: 10px sans-serif;
+    text-anchor: end;
+}
